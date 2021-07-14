@@ -10,15 +10,13 @@ let fillGapsWithZeros strand =
     let defaultMap = [ 'A', 0; 'C', 0; 'G', 0; 'T', 0 ] |> Map.ofSeq
     Map.fold (fun acc key value -> Map.add key value acc) defaultMap strand
 
-let (|>>) v f = Option.map f v
-
-let homeRolledBind fn result =
-    match result with
-    | Some s -> fn s
-    | None -> None
+let count =
+    Seq.countBy id 
+    >> Map.ofSeq
+    >> fillGapsWithZeros
+    |> Option.map
 
 let nucleotideCounts (strand: string): Option<Map<char, int>> = 
     strand
     |> validate
-    |>> (Seq.countBy id >> Map.ofSeq)
-    |>> fillGapsWithZeros
+    |> count
