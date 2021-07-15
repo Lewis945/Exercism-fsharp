@@ -1,20 +1,18 @@
 ﻿module NucleotideCount
+open System.Text.RegularExpressions
 
 let validate strand = 
-    let nucleotides = System.Text.RegularExpressions.Regex("^[ACGT]*$")    
-    match (nucleotides.IsMatch strand) with
+    match (Regex("^[ACGT]*$").IsMatch strand) with
     | false -> None
     | true -> Some strand
 
-let fillGapsWithZeros strand =
-    let defaultMap = [ 'A', 0; 'C', 0; 'G', 0; 'T', 0 ] |> Map.ofSeq
-    Map.fold (fun acc key value -> Map.add key value acc) defaultMap strand
-
-let count =
-    Seq.countBy id 
-    >> Map.ofSeq
-    >> fillGapsWithZeros
-    |> Option.map
+let count (strand: string option) =
+    let count' =
+        (fun v -> "ACTG" + v)
+        >> Seq.countBy id
+        >> Seq.map (fun (k, v) -> (k, v - 1))
+        >> Map.ofSeq
+    Option.map count' strand
 
 let nucleotideCounts (strand: string): Option<Map<char, int>> = 
     strand
