@@ -1,6 +1,6 @@
 ﻿module Proverb
 
-let recite1 (input: string list): string list = 
+let recite (input: string list): string list = 
     let rec recite' acc items =
         match items with
         | [] -> acc []
