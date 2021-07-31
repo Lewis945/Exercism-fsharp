@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Sieve", "Sieve.fsproj", "{B8BBEAE5-A0E7-4DC1-9776-5B26B1D53FE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8BBEAE5-A0E7-4DC1-9776-5B26B1D53FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BBEAE5-A0E7-4DC1-9776-5B26B1D53FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BBEAE5-A0E7-4DC1-9776-5B26B1D53FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BBEAE5-A0E7-4DC1-9776-5B26B1D53FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AA0EB11-07E6-4806-B180-6E3FF75C0A95}
+	EndGlobalSection
+EndGlobal
